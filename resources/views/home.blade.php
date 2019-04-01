@@ -18,6 +18,18 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">Active Users</div>
+
+                <div class="card-body" id ="active_users">
+               
+                </div>
+            </div>
+        </div>
+
+
     </div>
 </div>
 @endsection

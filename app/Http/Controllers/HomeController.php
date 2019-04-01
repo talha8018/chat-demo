@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\User;
+use Auth;
 class HomeController extends Controller
 {
     /**
@@ -24,5 +25,17 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+
+    public function chat($id)
+    {
+ 
+
+        /* if($id == Auth::user()->id)
+            return redirect()->back(); */
+
+        $user = User::find($id);
+        return view('chat',compact('user'));
     }
 }

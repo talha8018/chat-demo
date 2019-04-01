@@ -1,0 +1,2 @@
+ 
+    <div class="media hover-effect" title="click to chat with"><img class="mr-3" src="https://via.placeholder.com/50x50" alt="Generic placeholder image"><div class="media-body"><h5 class="mt-0" class="name">Media heading</h5><p >talha8018@gmail.com</p></div></div>
