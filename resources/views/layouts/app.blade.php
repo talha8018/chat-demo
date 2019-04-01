@@ -83,7 +83,7 @@
    
         <script>
 
-
+window.timer = null;
 $(document).on('keydown','#text',function(){
     
   
@@ -96,13 +96,19 @@ $(document).on('keydown','#text',function(){
             });
 
               
-
  
-
 
 window.Echo.private("chats.{{ Auth::user()->id }}")
                 .listenForWhisper('typing', (e) => {
+
+
                     $(".typing").html(e.name+ ' is typing...');
+                    clearTimeout(window.timer);
+
+                   window.timer = setTimeout(function(){
+                        $(".typing").html('');
+                    }, 1000);
+                    
                     
                 });
         </script>
