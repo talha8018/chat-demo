@@ -96,26 +96,3 @@ $(document).on("click","#send",function(){
  
 
 
-$(document).keypress(function(event){
-	
-	var keycode = (event.keyCode ? event.keyCode : event.which);
-	if(keycode == '13'){
-        var text = $("#text").val();
-        if(text.length > 0)
-        {
-            sendMessage(text)
-            $("#text").val("");	
-        }
-        
-	}
-	
-});
-
-
-
-function sendMessage(message)
-{
-    var string = '	<div class="balon1 p-2 m-0 position-relative"  ><a class="float-right"> '+ message+'   </a></div>';
-    $("#sohbet").append(string).animate({
-        scrollTop: $('#sohbet')[0].scrollHeight}, 100);
-}

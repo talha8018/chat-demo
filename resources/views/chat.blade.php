@@ -24,14 +24,10 @@
             
               
 
-              <div class="balon2 p-2 m-0 position-relative" data-is="Yusuf - 3:22 pm">
-				
-                <a class="float-left sohbet2"> Checking out iOS7 you know.. </a>
-              
-            </div>
+           
 			         
               </div>
-              <span class="typing"></span>
+              
 			  </div>
 
 			  <div class="w-100 card-footer p-0 bg-light border border-bottom-0 border-left-0 border-right-0">
@@ -55,10 +51,11 @@
 					
 			  </div>
 
-			</div>
+			</div><span class="typing"></span>
 		  </div>
 		  
 		</div>
+		
 	  </div>
 
  

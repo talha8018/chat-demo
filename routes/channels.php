@@ -14,6 +14,12 @@
 Broadcast::channel('chats.{id}', function ($user, $id) {
     return (int) $id === (int) $id;
 });
+
+Broadcast::channel('chating.{id}', function ($user, $id) {
+    return (int) $id === (int) $id;
+});
+
+
 Broadcast::channel('chat', function ($user) {
         return ['email' => $user->email, 'name' => ucfirst($user->name), 'id'=> $user->id];
 });

@@ -88,9 +88,9 @@ $(document).on('keydown','#text',function(){
     
   
             
-            window.Echo.private("chats.{{ $user->id }}")
+            window.Echo.private("chats.{{ Auth::user()->id }}")
                 .whisper('typing', {
-                    name: "{{ $user -> name }}"
+                    name: "{{ Auth::user()->name }}"
                 });
 
             });
@@ -98,18 +98,60 @@ $(document).on('keydown','#text',function(){
               
  
 
-window.Echo.private("chats.{{ Auth::user()->id }}")
+window.Echo.private("chats.{{ $user->id }}")
                 .listenForWhisper('typing', (e) => {
-
-
                     $(".typing").html(e.name+ ' is typing...');
                     clearTimeout(window.timer);
-
                    window.timer = setTimeout(function(){
                         $(".typing").html('');
                     }, 1000);
-                    
-                    
                 });
+
+                window.Echo.private("chating.{{ Auth::user()->id }}")
+                .listenForWhisper('chat', (e) => {
+
+                    sendMessage(e.message,'left')
+                });
+
+                
+$(document).keypress(function(event){
+	
+	var keycode = (event.keyCode ? event.keyCode : event.which);
+    if(keycode == '13')
+    {
+        var text = $("#text").val();
+        if(text.length > 0)
+        {
+            window.Echo.private("chating.{{ $user->id }}")
+                .whisper('chat', {
+                    message: text
+                });
+            sendMessage(text,'right')
+            $("#text").val("");	
+        }
+	}
+	
+});
+
+
+
+function sendMessage(message,position)
+{
+    var classs = '';
+    if(position == 'left')
+    {
+classs  = 'balon1';
+    }
+    else 
+    {
+        classs  = 'balon2';
+    }
+    var string = '	<div class="'+classs+' p-2 m-0 position-relative"  ><a class="float-'+ position +'"> '+ message+'   </a></div>';
+    $("#sohbet").append(string).animate({
+        scrollTop: $('#sohbet')[0].scrollHeight}, 100);
+}
+
+
+
         </script>
     @endif
