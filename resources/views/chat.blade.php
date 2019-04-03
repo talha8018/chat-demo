@@ -7,7 +7,7 @@
              <div class="jumbotron m-0 p-0 bg-transparent">
 		<div class="row m-0 p-0 position-relative">
 		  <div class="col-12 p-0 m-0 position-absolute" style="right: 0px;">
-			<div class="card border-0 rounded" style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.10), 0 6px 10px 0 rgba(0, 0, 0, 0.01); overflow: hidden; height: 60vh;">
+			<div class="card border-0 rounded" style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.10), 0 6px 10px 0 rgba(0, 0, 0, 0.01); overflow: hidden; height: 70vh;">
 
 			  <div class="card-header p-1 bg-light border border-top-0 border-left-0 border-right-0" style="color: rgba(96, 125, 139,1.0);">
 				
