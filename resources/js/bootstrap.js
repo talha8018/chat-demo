@@ -63,21 +63,7 @@ window.Echo = new Echo({
 
 
 
-window.Echo.join('chat')
-    .here((users) => {
-        var active_users = "";
-        users.forEach(function(user) {
-            active_users += '<div id="'+user['id']+'" class="media hover-effect" title="click to chat with '+user['name']+'"><img class="mr-3" src="https://via.placeholder.com/50x50" alt="Generic placeholder image"><div class="media-body"><h5 class="mt-0" class="name">'+user['name']+'</h5><p >'+user['email']+'</p></div></div>';
-        });
-        $("#active_users").html(active_users);
-    })
-    .joining((user) => {
-         
-        $("#active_users").append('<div id="'+user.id+'" class="media hover-effect" title="click to chat with '+user.name+'"><img class="mr-3" src="https://via.placeholder.com/50x50" alt="Generic placeholder image"><div class="media-body"><h5 class="mt-0" class="name">'+user.name+'</h5><p >'+user.email+'</p></div></div>');
-    })
-    .leaving((user) => {
-        $("#"+user.id).remove();
-    });
+
 
 
 
